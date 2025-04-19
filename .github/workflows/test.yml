@@ -52,8 +52,9 @@ jobs:
           gsettings set org.freedesktop.ibus.general preload-engines "['xkb:jp::jpn','mozc-jp']"
           gsettings set org.freedesktop.ibus.general use-system-keyboard-layout true
       - run: |
-          chromium --no-sandbox "https://www.google.com" &
+          chromium --no-sandbox "https://www.google.com" & || true
           sleep 5
+      - run:
           # ウィンドウをアクティブに
           xdotool search --onlyvisible --class chromium-browser windowactivate
           sleep 1
