@@ -58,6 +58,7 @@ jobs:
           # ウィンドウをアクティブに
           # xdotool search --onlyvisible --class chromium windowactivate
           # sleep 1
+          xdotool key ctrl+l
           # 日本語入力モードに切り替え
           # xdotool key Hangul
           xdotool key Zenkaku_Hankaku
@@ -75,7 +76,6 @@ jobs:
           xdotool key h
           xdotool key a
           xdotool key ,
-          xdotool key Space
           xdotool key s
           xdotool key e
           xdotool key k
