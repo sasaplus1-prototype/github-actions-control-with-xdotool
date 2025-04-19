@@ -12,7 +12,7 @@ jobs:
       - name: 必要なパッケージのインストール
         run: |
           sudo apt-get update
-          sudo apt-get install -y xdotool xvfb gedit
+          sudo apt-get install -y xdotool xvfb xterm
       - name: Xvfbの起動
         run: |
           export DISPLAY=:99
