@@ -54,7 +54,7 @@ jobs:
       - run: |
           chromium --no-sandbox "https://www.google.com" & || true
           sleep 5
-      - run:
+      - run: |
           # ウィンドウをアクティブに
           xdotool search --onlyvisible --class chromium-browser windowactivate
           sleep 1
