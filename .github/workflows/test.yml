@@ -67,8 +67,8 @@ jobs:
           # sleep 1
           xdotool key ctrl+l
           # 日本語入力モードに切り替え
-          xdotool key Hangul
-          # xdotool key Zenkaku_Hankaku
+          # xdotool key Hangul
+          xdotool key Zenkaku_Hankaku
           sleep 1
           # 日本語を入力
           # xdotool type "こんにちは、世界"
