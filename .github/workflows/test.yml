@@ -56,7 +56,7 @@ jobs:
       - run: |
           sleep 5
           # ウィンドウをアクティブに
-          xdotool search --onlyvisible --class chromium-browser windowactivate
+          xdotool search --onlyvisible --class chromium windowactivate
           sleep 1
           # 日本語入力モードに切り替え
           # xdotool key Hangul
