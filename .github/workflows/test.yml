@@ -89,5 +89,5 @@ jobs:
           xwd -root -display :99 -silent | convert xwd:- png:/tmp/screenshot.png
       - uses: actions/upload-artifact@v4
         with:
-          name: xdotool-screenshot1
+          name: xdotool-screenshot2
           path: /tmp/screenshot.png
