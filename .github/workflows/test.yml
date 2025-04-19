@@ -44,19 +44,26 @@ jobs:
           Xvfb :99 -screen 0 1024x768x24 &
           echo 'DISPLAY=:99' >> "$GITHUB_ENV"
           export DISPLAY=:99
-          ibus-daemon -d -x
+          # キーボードレイアウトを日本語に設定
+          setxkbmap jp
+          # ibusを起動
+          ibus-daemon -drx
           sleep 3
           ibus restart
       - name: Configure ibus for mozc
         run: |
-          gsettings set org.freedesktop.ibus.general preload-engines "['xkb:jp::jpn','mozc-jp']"
+          gsettings set org.freedesktop.ibus.general preload-engines "['mozc-jp']"
+          # gsettings set org.freedesktop.ibus.general preload-engines "['xkb:jp::jpn','mozc-jp']"
           gsettings set org.freedesktop.ibus.general use-system-keyboard-layout true
+          # ibusエンジンをmozcに設定
+          ibus engine mozc-jp
       - run: chromium --no-sandbox "https://www.google.com" &
         continue-on-error: true
       - run: |
-          sleep 5
-          # ウィンドウをアクティブに
+          # ウィンドウをアクティブ化
           # xdotool search --onlyvisible --class chromium windowactivate
+          # xdotool search --onlyvisible --class Chromium windowactivate --sync
+          sleep 5
           # sleep 1
           xdotool key ctrl+l
           # 日本語入力モードに切り替え
